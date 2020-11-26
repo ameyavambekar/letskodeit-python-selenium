@@ -18,9 +18,3 @@ class RegisterCoursesTests(unittest.TestCase):
         self.courses.enrollCourse("1234567812345678", "05/23", "123")
         result = self.courses.verifyInvalidCardNumber()
         self.ts.mark(result, "Card Number is invalid")
-
-    @pytest.mark.run(order=2)
-    def test_invalidExpDate(self):
-        self.courses.enrollCourse("4018061875027108", "05/20", "123")
-        result = self.courses.verifyInvalidExpiryDate()
-        self.ts.markFinal("test_invalidExpDate", result, "Expiration date is passed")

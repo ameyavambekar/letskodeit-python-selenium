@@ -23,10 +23,3 @@ class RegisterCoursesTests(unittest.TestCase):
         result = self.courses.verifyInvalidCardNumber()
         self.ts.markFinal("test_invalidCardNumber", result, "Card Number is invalid")
         self.driver.find_element_by_xpath("//a[text()='ALL COURSES']").click()
-
-
-    # @pytest.mark.run(order=2)
-    # def test_invalidExpDate(self):
-    #     self.courses.enrollCourse("4018061875027108", "05/20", "123")
-    #     result = self.courses.verifyInvalidExpiryDate()
-    #     self.ts.markFinal("test_invalidExpDate", result, "Expiration date is passed")

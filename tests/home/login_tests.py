@@ -22,7 +22,7 @@ class LoginTests(unittest.TestCase):
         self.lp.login("test@email.com", "abcabc")
         result1 = self.lp.verifyTitle() == True
         self.ts.mark(result1, "Title Verified")
-        result2 = self.lp.verifyLoginSuccessful() == True
+        result2 = self.lp.verifyLoginSuccessful()
         self.ts.markFinal("test_valid_login", result2, "Login was successful")
 
 
@@ -30,5 +30,6 @@ class LoginTests(unittest.TestCase):
     def test_invalid_login(self):
         self.lp.logout()
         self.lp.login("test@email.com", "abc")
-        assert self.lp.verifyLoginFailed() == True
+        result = self.lp.verifyLoginFailed()
+        self.ts.mark(result, "Login Error")
 

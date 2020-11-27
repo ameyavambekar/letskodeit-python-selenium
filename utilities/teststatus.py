@@ -28,7 +28,7 @@ class TestStatus(SeleniumDriver):
                     self.screenShot(resultMessage)
             else:
                 self.resultList.append("FAIL")
-                self.log.error("### VERIFICATION SUCCESSFUL :: " + resultMessage)
+                self.log.error("### VERIFICATION FAILED :: " + resultMessage)
         except:
             self.resultList.append("FAIL")
             self.log.error("### Exception Occured!!!!")
@@ -39,7 +39,6 @@ class TestStatus(SeleniumDriver):
     def mark(self, result, resultMessage):
         """
         Mark the result of the verification point in a test case
-        :param testName:
         :param result:
         :param resultMessage:
         :return:
